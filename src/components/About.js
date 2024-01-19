@@ -6,9 +6,8 @@ const About = () => {
   return (
    <>
         <div className='mx-auto text-center '>
-            <h4>This is about us page </h4>
-            <User/>
-            <Userclass name={"ns"}/>
+            <h1>Developed By</h1>
+            <Userclass name={"Naalam Sravani"} location={"Vizianagaram,Andhra Pradesh,India"} mail={"nalamsravani2016@gmail.com"}/>
         </div>
    </>
   )

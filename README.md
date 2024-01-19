@@ -92,15 +92,17 @@ Assignment-4
       Vdom is nothing but an object
       When we update anything then diff algo finds the difference between prev dom and the updated dom and then updates the actual dom
 2 TYPES OF WEB ROUTING
-   1) server-side routing(SSR)-> we need to make an API call to fetch the page and the whole application gets refreshed or loaded once again
+   1) server-side routing(SSR)-> We need to make an API call to fetch the page and the whole application gets refreshed or loaded once again
    2) client-side routing(CSR)-> all components are already loaded no need to get pages from some other places. React is client-side routing and is also known as single page application bcoz everything is on only one page
 
-CSR enables better UX compared to SSR bcoz we don't need load the entire doc from server  and wait for the request to succeed
+CSR enables better UX compared to SSR bcoz we don't need to load the entire doc from the server  and wait for the request to succeed
 
 createBrowserRouter takes 1)List of paths or 2)<Route path='' element={</>}/>
 dynamic segments =>:   ex:'/prjcrs/:id'
 
 Q)Why do we need useEffect?
- Ans=>  Basically in react we make an API call after the initial render of our app.So useEffect is hook developed for the purpose to make an API call after the initial render
-   .This useEffect has a call-back function where we actually make an api call
+ Ans=>  Basically in React we make an API call after the initial render of our app. So useEffect hook was developed for the purpose of making an API call after the initial render
+   .This useEffect has a call-back function where we make an API call
        So useEffect is needed to make an API call after the initial render
+Q)If we console(useState) what will happen?
+   It will return a function of useState which will be used behind the scenes

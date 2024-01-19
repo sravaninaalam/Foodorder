@@ -100,3 +100,7 @@ CSR enables better UX compared to SSR bcoz we don't need load the entire doc fro
 createBrowserRouter takes 1)List of paths or 2)<Route path='' element={</>}/>
 dynamic segments =>:   ex:'/prjcrs/:id'
 
+Q)Why do we need useEffect?
+ Ans=>  Basically in react we make an API call after the initial render of our app.So useEffect is hook developed for the purpose to make an API call after the initial render
+   .This useEffect has a call-back function where we actually make an api call
+       So useEffect is needed to make an API call after the initial render

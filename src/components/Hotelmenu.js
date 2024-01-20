@@ -3,6 +3,7 @@ import { CDN_URL } from '../utils/constants'
 import Shimmer from './Shimmer'
 import { useParams } from 'react-router-dom'
 import useMenu from '../utils/customhooks'
+import Restaurantcategory from './Restaurantcategory'
 
 const Hotelmenu = () => {
     const{resId}=useParams()
@@ -15,7 +16,7 @@ const Hotelmenu = () => {
                   resInfo?.cards[0]?.card.card.info
    const category=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
    .filter(c=>c.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-   console.log(category)
+//    console.log(category)
   return (
     <>
         <div className=' my-3 p-5 text-center '>
@@ -28,7 +29,10 @@ const Hotelmenu = () => {
                 </div>
             </div>
             
-             {category.map(item=><h3>{item?.card?.card?.title}</h3>)}
+             {category.map(item=>
+                <Restaurantcategory key={item?.card?.card?.title} menudata=
+                {item?.card?.card} />
+            )}
         </div>
     </>
   )

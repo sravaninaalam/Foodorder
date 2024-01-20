@@ -8,18 +8,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
+import { useHotelData } from '../../utils/customhooks'
 const Body = () => {
+
   const[hotelData,setHoteldata]=useState([])
   const[replica,setReplica]=useState([])
-  const[searchip,setSearchIp]=useState('')
   const[items,setItems]=useState([])
- 
+  const[searchip,setSearchIp]=useState('')
+  console.log(useHotelData())
   useEffect(()=>{
     gettingHotelData()
    
   },[])
+  
   const gettingHotelData=async()=>{
-    // const data=await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(HTL_API)}`)
     const data=await fetch(HTL_API_CORS)
     const json_data=await data.json()
     setHoteldata(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -27,9 +29,7 @@ const Body = () => {
     setItems(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    
   }
-// if(hotelData.length==0){
-//   return <Shimmer/>
-// }
+
   return hotelData.length==0?<Shimmer/>:  (
    <>
        <div>

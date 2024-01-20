@@ -2,20 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { CDN_URL, MENU_API_CORS } from '../utils/constants'
 import Shimmer from './Shimmer'
 import { useParams } from 'react-router-dom'
+import useMenu from '../utils/customhooks'
 
 const Hotelmenu = () => {
     const{resId}=useParams()
-
-    const[resInfo,setResInfo]=useState([])
-    useEffect(()=>{
-        getMenuData()
-    },[])
-    const getMenuData=async()=>{
-            const data=await fetch(MENU_API_CORS+resId)
-            const json=await data.json()
-         
-            setResInfo(json?.data)
-    }
+    resInfo =useMenu(resId)
+    
     if(resInfo.length<1){
         return <Shimmer/>
     }

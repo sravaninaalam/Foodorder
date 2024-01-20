@@ -106,3 +106,11 @@ Q)Why do we need useEffect?
        So useEffect is needed to make an API call after the initial render
 Q)If we console(useState) what will happen?
    It will return a function of useState which will be used behind the scenes
+q)How to make an API call in classcomponents?
+        async componentDidMount(){
+                const data=await fetch("")
+                const json=await data.json()
+                this.setState({
+                  userInfo:json
+                })
+        }

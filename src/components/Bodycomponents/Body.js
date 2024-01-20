@@ -8,19 +8,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
-import { useHotelData,useOnline } from '../../utils/customhooks'
+import { useOnline } from '../../utils/customhooks'
 
 const Body = () => {
-  const cloned=useHotelData()
-  
+
   const[hotelData,setHoteldata]=useState([])
   const[replica,setReplica]=useState([])
   const[items,setItems]=useState([])
-
   const[searchip,setSearchIp]=useState('')
- 
-  // console.log("data var",cloned)
-  // console.log(hookeddata,"printed hook")
+
+  
   useEffect(()=>{
     gettingHotelData()
    

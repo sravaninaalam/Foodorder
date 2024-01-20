@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { CDN_URL, MENU_API_CORS } from '../utils/constants'
+import React from 'react'
+import { CDN_URL } from '../utils/constants'
 import Shimmer from './Shimmer'
 import { useParams } from 'react-router-dom'
 import useMenu from '../utils/customhooks'
@@ -27,6 +27,7 @@ const Hotelmenu = () => {
                     <h3>{costForTwoMessage}</h3>
                 </div>
             </div>
+            
              {category.map(item=><h3>{item?.card?.card?.title}</h3>)}
         </div>
     </>

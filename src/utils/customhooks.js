@@ -32,9 +32,8 @@ export const useHotelData=()=>{
         setItem(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    
     }
-    return({
-        data,clone,item
-    })
+    return(
+        clone)
 }
 
 
@@ -43,11 +42,11 @@ export const useOnline=()=>{
     const handleStatusOnline=()=>setOnlineStatus(true)
     const handleStatusOffline=()=>setOnlineStatus(false)
     useEffect(()=>{
-   const a1= window.addEventListener("online",handleStatusOnline)
-    const a2=window.addEventListener("offline",handleStatusOffline)
+     window.addEventListener("online",handleStatusOnline)
+     window.addEventListener("offline",handleStatusOffline)
 return(()=>{
-    window.removeEventListener(a1)
-    window.removeEventListener(a2)
+    window.removeEventListener("online",handleStatusOnline)
+    window.removeEventListener("offline",handleStatusOffline)
   })
 },[])
     return onlineStatus

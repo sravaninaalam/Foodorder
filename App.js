@@ -9,6 +9,7 @@ import Error from "./src/components/Error";
 import Cart from "./src/components/Cart";
 import Login from "./src/components/Login";
 import Hotelmenu from "./src/components/Hotelmenu";
+
 const App=()=>{
     return(
         <div>

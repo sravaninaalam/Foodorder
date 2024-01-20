@@ -114,3 +114,5 @@ q)How to make an API call in classcomponents?
                   userInfo:json
                 })
         }
+        when we call setState() mounting phase has been done then updating phase has been started and react once again triggers the render() with new state variables 
+        and react will updated dom with new data then it will call componentDidUpdate().

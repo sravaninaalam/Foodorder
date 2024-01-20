@@ -114,5 +114,12 @@ q)How to make an API call in classcomponents?
                   userInfo:json
                 })
         }
-        when we call setState() mounting phase has been done then updating phase has been started and react once again triggers the render() with new state variables 
-        and react will updated dom with new data then it will call componentDidUpdate().
+        when we call setState() mounting phase has been done then the updating phase has been started and react once again triggers the render() with new state variables
+        and react will update dom with new data then it will call componentDidUpdate().
+...In 1st render componentDidMount() called. after every subsequent renders componetDidUpdate() will be called
+****====>        
+useEffect(()=>{                                        =>                componentDidUpdate(prevProps,prevState){
+},[count,count2)                                                                     if(this.state.count!==revState.count|| this.state.count2!==revState.count2){}
+
+So useEffect has dependency array is prevoiusly in class components we do use some conditional statement to check upon state variabes. if this variable is updated do this
+so in useffect we have dependency array to solve the complexity of writing code

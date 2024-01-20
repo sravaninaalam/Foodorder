@@ -8,14 +8,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
-import { useHotelData } from '../../utils/customhooks'
-const Body = () => {
+import { useHotelData,useOnline } from '../../utils/customhooks'
 
+const Body = () => {
+  const cloned=useHotelData()
+  
   const[hotelData,setHoteldata]=useState([])
   const[replica,setReplica]=useState([])
   const[items,setItems]=useState([])
+
   const[searchip,setSearchIp]=useState('')
-  console.log(useHotelData())
+ 
+  // console.log("data var",cloned)
+  // console.log(hookeddata,"printed hook")
   useEffect(()=>{
     gettingHotelData()
    
@@ -29,8 +34,12 @@ const Body = () => {
     setItems(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    
   }
+  const isonline=useOnline()
+  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
 
-  return hotelData.length==0?<Shimmer/>:  (
+
+
+  return replica.length==0?<Shimmer/>:  (
    <>
        <div>
         <form onSubmit={(e)=>e.preventDefault()}>

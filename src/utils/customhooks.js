@@ -30,9 +30,27 @@ export const useHotelData=()=>{
         setData(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setClone(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setItem(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
-        console.log("IN HOOK")
+   
     }
     return({
         data,clone,item
     })
 }
+
+
+export const useOnline=()=>{
+    const[onlineStatus,setOnlineStatus]=useState(true)
+    const handleStatusOnline=()=>setOnlineStatus(true)
+    const handleStatusOffline=()=>setOnlineStatus(false)
+    useEffect(()=>{
+   const a1= window.addEventListener("online",handleStatusOnline)
+    const a2=window.addEventListener("offline",handleStatusOffline)
+return(()=>{
+    window.removeEventListener(a1)
+    window.removeEventListener(a2)
+  })
+},[])
+    return onlineStatus
+}
+
+

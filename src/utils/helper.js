@@ -1,10 +1,7 @@
 
 export function searchedRestau(ip,data){
-    return(
-        
-          data.filter(i=>i?.info?.name.toLowerCase().includes(ip.toLowerCase()))
-      
-    )
+  // console.log(ip)
+    return(data.filter(i=>i?.info?.name.toLowerCase().includes(ip.toLowerCase())))
 } 
 
 

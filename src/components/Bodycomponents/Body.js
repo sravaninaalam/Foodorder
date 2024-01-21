@@ -8,33 +8,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
-import { useOnline } from '../../utils/customhooks'
+import { useHotelData, useOnline } from '../../utils/customhooks'
 
 const Body = () => {
 
-  const[hotelData,setHoteldata]=useState([])
+  const[hotelData,setHotelData]=useState([])
   const[replica,setReplica]=useState([])
   const[items,setItems]=useState([])
   const[searchip,setSearchIp]=useState('')
-
-  
   useEffect(()=>{
-    gettingHotelData()
-   
+     gettingHotelData()
   },[])
   
   const gettingHotelData=async()=>{
     const data=await fetch(HTL_API_CORS)
     const json_data=await data.json()
-    setHoteldata(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setHotelData(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setReplica(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setItems(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
    
   }
   const isonline=useOnline()
-  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
-
-
+  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are offline 🔴</h1>}
 
   return replica.length==0?<Shimmer/>:  (
    <>
@@ -44,11 +39,11 @@ const Body = () => {
              placeholder='Search restaurants here...' value={searchip} onChange={(e)=>setSearchIp(e.target.value)} />
             <button className='bg-indigo-200 py-2 px-5 border border-black rounded-r-full'
             onClick={()=>{const res=searchedRestau(searchip,replica)
-                setHoteldata(res)
+                setHotelData(res)
             }}>🔍</button>
             <button className='bg-pink-400 my-4 p-2 rounded-md float-end mr-[10%] shadow-md'
             onClick={()=>{const res=replica.filter(i=>i?.info?.avgRating>4)
-              setHoteldata(res)
+              setHotelData(res)
             }}>Toprated⭐</button>
         </form>
       </div>

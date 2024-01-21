@@ -47,3 +47,6 @@ const latandlang=[
 // let ap=latandlang.filter(i=>i.Location===itp)
 // const{lat,lng}=ap[0]
 // console.log(lng)
+
+
+

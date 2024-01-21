@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
-import { useHotelData, useOnline } from '../../utils/customhooks'
+import {useOnline } from '../../utils/customhooks'
 
 const Body = () => {
 

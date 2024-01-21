@@ -15,29 +15,6 @@ useEffect(()=>{
 }
 export default useMenu
 
-// only have one state variable and items variable return those variables.when we receiving we do like
-// setdata(var)
-export const useHotelData=()=>{
-    const[data,setData]=useState([])
-   
-    const[item,setItem]=useState([])
-    
-    useEffect(()=>{
-        getData()
-    },[])
-    const getData=async()=>{
-        const data=await fetch(HTL_API_CORS)
-        const json_data=await data.json()
-        setData(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      
-        setItem(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
-   
-    }
-    return(
-        [data,item]
-      
-        )
-}
 
 
 export const useOnline=()=>{

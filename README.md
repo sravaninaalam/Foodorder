@@ -137,3 +137,5 @@ this.timer=setInterval(()=>{
 
   ==>  Lazy loading, code chunking, code splitting, dynamic loading, and dynamic import all are the same. And the main purpose of them is to make sure that to make code more scalable, readable and maintainable by splitting into chunks.Usually, its moto like one file has to contain one feature .If we have more feautures in one file it decreses the scalability
   and it is very difficult to solve any errors
+  const Somecomponent=Lazy(()=>import('component_path'))
+  <Suspense fallback={<Shimmer/>}><Somecomponent/></Suspense>

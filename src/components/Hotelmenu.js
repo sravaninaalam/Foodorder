@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CDN_URL } from '../utils/constants'
 import Shimmer from './Shimmer'
 import { useParams } from 'react-router-dom'
@@ -7,6 +7,7 @@ import Restaurantcategory from './Restaurantcategory'
 
 const Hotelmenu = () => {
     const{resId}=useParams()
+    const[show ,setShow]=useState()
     resInfo =useMenu(resId)
     
     if(resInfo.length<1){
@@ -29,9 +30,9 @@ const Hotelmenu = () => {
                 </div>
             </div>
             
-             {category.map(item=>
+             {category.map((item,index)=>
                 <Restaurantcategory key={item?.card?.card?.title} menudata=
-                {item?.card?.card} />
+                {item?.card?.card}  show={index===show} setShow={()=>setShow(index)} hide={()=>setShow(null)}/>
             )}
         </div>
     </>

@@ -135,12 +135,12 @@ this.timer=setInterval(()=>{
                  componentWillUnmount(){
                             clearInterval(this.timer)                                                                                                                                                       }"""
 
-  ==>  Lazy loading, code chunking, code splitting, dynamic loading, and dynamic import all are the same. And the main purpose of them is to make sure that to make code more scalable, readable, and maintainable by splitting into chunks.Usually, its moto like one file has to contain one feature .If we have more feautures in one file it decreses the scalability
+  ==>  Lazy loading, code chunking, code splitting, dynamic loading, and dynamic import all are the same. The main purpose of them is to make sure that to make code more scalable, readable, and maintainable by splitting it into chunks. Usually, it's moto like one file has to contain one feature.If we have more features in one file it decreases the scalability
   and it is very difficult to solve any errors
   const Somecomponent=Lazy(()=>import('component_path'))
   <Suspense fallback={<Shimmer/>}><Somecomponent/></Suspense>
 
   WRITING CSS
-      1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui,chakra ui,antdesign,bootstrap)
-      Tailwind css: we will install tailwindcss along with post css  . post css is a tool for transforming css with javascript .
-      ".postcssrc" file is a configuration for post css .basically this file file is helps parcel to uderstand what is written in tailwind
+      1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui, chakra ui,ant design,bootstrap)
+      Tailwind CSS: we will install tailwind along with post css. post-CSS is a tool for transforming CSS with JavaScript.
+      ".postcssrc" file is a configuration for post css .basically this file file is helps parcel to understand what is written in tailwind

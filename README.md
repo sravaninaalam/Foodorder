@@ -146,4 +146,6 @@ this.timer=setInterval(()=>{
       ".postcssrc" file is a configuration for post css .basically this file file is helps parcel to understand what is written in tailwind
     cons-1) There were some cases where we needed to write more classes in our file. when we put so much CSS classes in our JSX or HTML  files then our js file is overloaded with css classes and the code feels a little less readable
      apart from this everything is good
- pros-1)tailwind is lightweight/tiny (when parcel will make bundle of css it will only include the css that is required on our web page . if we have same classes multiple times it will load only one class) Tailwind has more than 1000+ classes but it is loaded on our page with the classes which we used in our app ,Thats why tailwind is light weight
+ pros-1)tailwind is lightweight/tiny (when parcel will make bundle of css it will only include the css that is required on our web page . if we have same classes multiple times it will load only one class) Tailwind has more than 1000+ classes but it is loaded on our page with the classes which we used in our app ,Thats why tailwind is lightweight
+
+Higher Order Component - It is  a function that takes a component and returns a component. It takes a component and enhances/tweaks  it with some features and returns

@@ -32,7 +32,7 @@ const Hotelmenu = () => {
             
              {category.map((item,index)=>
                 <Restaurantcategory key={item?.card?.card?.title} menudata=
-                {item?.card?.card}  showItems={index===show?true:false} setShowItems={index===show?()=>setShow(-1):()=>setShow(index)}/>
+                {item?.card?.card}  showItems={index===show?true:false} setShowItems={index===show?()=>setShow():()=>setShow(index)}/>
             )}
         </div>
     </>

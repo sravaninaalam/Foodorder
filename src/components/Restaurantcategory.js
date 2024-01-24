@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Menuitems from './Menuitems'
 
 function Restaurantcategory({menudata,showItems,setShowItems}) {

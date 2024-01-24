@@ -13,7 +13,7 @@ const Hotelmenu = () => {
     if(resInfo.length<1){
         return <Shimmer/>
     }
-    const{name,avgRating,city,cloudinaryImageId,costForTwoMessage,cuisines}=
+    const{name,cloudinaryImageId,costForTwoMessage,cuisines}=
                   resInfo?.cards[0]?.card.card.info
    const category=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
    .filter(c=>c.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
@@ -32,7 +32,7 @@ const Hotelmenu = () => {
             
              {category.map((item,index)=>
                 <Restaurantcategory key={item?.card?.card?.title} menudata=
-                {item?.card?.card}  show={index===show} setShow={()=>setShow(index)} hide={()=>setShow(null)}/>
+                {item?.card?.card}  showItems={index===show?true:false} setShowItems={index===show?()=>setShow(-1):()=>setShow(index)}/>
             )}
         </div>
     </>

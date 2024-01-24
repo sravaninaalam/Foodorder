@@ -141,15 +141,15 @@ this.timer=setInterval(()=>{
   <Suspense fallback={<Shimmer/>}><Somecomponent/></Suspense>
 
   WRITING CSS
-      1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui, chakra ui,and design,bootstrap)
+      1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui, chakra ui, and design, bootstrap)
       Tailwind CSS: we will install tailwind along with post css. post-CSS is a tool for transforming CSS with JavaScript.
-      ".postcssrc" file is a configuration for post css Basically this file is helps the parcel to understand what is written in tailwind
-    cons-1) There were some cases where we needed to write more classes in our file. when we put so much CSS classes in our JSX or HTML  files then our js file is overloaded with css classes and the code feels a little less readable
+      ".postcssrc" file is a configuration for post css helps the parcel to understand what is written in tailwind
+    cons-1) There were some cases where we needed to write more classes in our file. when we put so much CSS classes in our JSX or HTML  files then our js file is overloaded with CSS classes and the code feels a little less readable
      apart from this everything is good
- pros-1)tailwind is lightweight/tiny (when  parcel makes bundle of css it will only include the css that is required on our web page . if we have same classes multiple times it will load only one class) Tailwind has more than 1000+ classes but it is loaded on our page with the classes which we used in our app ,Thats why tailwind is lightweight
+ pros-1)tailwind is lightweight/tiny (when  parcel makes a bundle of CSS it will only include the CSS that is required on our web page . If we have the same classes multiple times it will load only one class) Tailwind has more than 1000+ classes but it is loaded on our page with the classes which we used in our app, Thats why tailwind is lightweight
 
 Higher Order Component - It is  a function that takes a component and returns a component. It takes a component and enhances/tweaks  it with some features and returns
 
-Lifting the state up: If we want to control our child component in parent level then we maintain their state in parent level.This is known as lifting stateup. The children components is now  controlled component
+Lifting the state up: If we want to control our child component at the parent level then we maintain their state at the parent level. This is known as lifting state up. The children's components is now  controlled component
 
-uncontrolled component - is  something which has its own state. It state not dependent on any other component
+uncontrolled component - is  something which has its own state. It states not dependent on any other component

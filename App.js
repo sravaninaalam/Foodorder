@@ -9,14 +9,15 @@ import Error from "./src/components/Error";
 import Cart from "./src/components/Cart";
 import Login from "./src/components/Login";
 import Hotelmenu from "./src/components/Hotelmenu";
-
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
 const App=()=>{
     return(
-        <div>
+        <Provider store={store}>
               <Header/>
                     <Outlet/>
               <Footer/>
-        </div>
+        </Provider>
     )
 }
 

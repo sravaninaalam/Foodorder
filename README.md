@@ -142,7 +142,7 @@ this.timer=setInterval(()=>{
 
   WRITING CSS
       1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui, chakra ui, and design, bootstrap)
-      Tailwind CSS: we will install tailwind along with post css. post-CSS is a tool for transforming CSS with JavaScript.
+      Tailwind CSS: we will install tailwind along with post-CSS. post-CSS is a tool for transforming CSS with JavaScript.
       ".postcssrc" file is a configuration for post css helps the parcel to understand what is written in tailwind
     cons-1) There were some cases where we needed to write more classes in our file. when we put so much CSS classes in our JSX or HTML  files then our js file is overloaded with CSS classes and the code feels a little less readable
      apart from this everything is good
@@ -150,6 +150,6 @@ this.timer=setInterval(()=>{
 
 Higher Order Component - It is  a function that takes a component and returns a component. It takes a component and enhances/tweaks  it with some features and returns
 
-Lifting the state up: If we want to control our child component at the parent level then we maintain their state at the parent level. This is known as lifting state up. The children's components is now  controlled component
+Lifting the state up: If we want to control our child component at the parent level then we maintain their state at the parent level. This is known as lifting state up. The children's components are now  controlled component
 
 uncontrolled component - is  something which has its own state. It states not dependent on any other component

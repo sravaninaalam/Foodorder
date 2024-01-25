@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { APPLOGO } from '../utils/constants'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { enterLocation } from '../redux/locationSlice'
 const Header = () => {
     const[loc,setLoc]=useState('')
-   
+    const dispatch=useDispatch()
     const fetchingLocation=(e)=>{
        e.preventDefault()
+       dispatch(enterLocation(loc))
       setLoc('')
     }
+    
     const cartItems=useSelector(store=>store.cart.items)
    
   return (

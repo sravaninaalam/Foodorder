@@ -23,21 +23,7 @@ const Body = () => {
     setReplica(data?.jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setItems(data?.jsondata?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
   })
-  // useEffect(()=>{
-  //    gettingHotelData()
-  // },[])
-  
-  // const gettingHotelData=async()=>{
-  //   const data=await fetch(HTL_API_CORS)
-  //   const json_data=await data.json()
-  //   setHotelData(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  //   setReplica(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  //   setItems(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
-  
-  // }
-  // const isonline=useOnline()
-  // if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are offline 🔴</h1>}
-
+  const title=data?.jsondata?.data?.cards[1]?.card?.card?.header?.title
   return !replica?<Shimmer/>:  (
    <>
        <div>
@@ -62,7 +48,7 @@ const Body = () => {
         </div>
       
     {hotelData.length>=1?
-        <h1 className='p-3 m-3 font-bold text-2xl '>Restaurants with online food delivery {loc_data}</h1>:
+        <h1 className='p-3 m-3 font-bold text-2xl '>{title}</h1>:
         <h1 className='p-10 mx-[25%] my-2 text-red-500 text-2xl'>Sorry,No restaurants found 😔</h1>
     }
         <div className='w-11/12 ml-[7%]  mr-[7%] flex flex-wrap '>

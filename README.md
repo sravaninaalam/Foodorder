@@ -153,3 +153,7 @@ Higher Order Component - It is  a function that takes a component and returns a 
 Lifting the state up: If we want to control our child component at the parent level then we maintain their state at the parent level. This is known as lifting state up. The children's components are now  controlled component
 
 uncontrolled component - is  something which has its own state. It states not dependent on any other component
+
+Redux store==>   const items=useSelector(store=>store.slice_name.state)
+We have to make sure that which portion of the store we are subscribing to . We always need to subscribe to part whichever we are required.
+  useSelector(store=>store) ===> Doing this is not a good practice because Whenever any slice updates unnecessarily m component is subscribing.Its not necessary so always subscribe to particular portion of store 

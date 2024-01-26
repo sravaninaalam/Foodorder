@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { latandlang } from "./constants";
-import { json } from "react-router-dom";
-import Unknown from "../components/Unknown";
 
 export function searchedRestau(ip,data){
   // console.log(ip)
@@ -44,9 +42,8 @@ export const locationData=()=>{
   const[jsondata,setJsonData]=useState()
   
   let ap=latandlang.filter(i=>i.Location.toLowerCase()===loc_data.toLowerCase())
-  if(ap.length==0){
-    return <Unknown/>
-  }
+  if(ap.length==0) return 
+
   const{lat,lng}=ap[0]
    useEffect(()=>{
        getLoc()

@@ -9,14 +9,11 @@ export const Green_Rating_Img="https://encrypted-tbn0.gstatic.com/images?q=tbn:A
 export const Yellow_Rating_Img="https://thumbs.dreamstime.com/b/five-point-yellow-star-icon-154791548.jpg"
 
 export const Cart_Empty_Img="https://media.istockphoto.com/vectors/fast-food-chef-on-roller-skates-vector-id470852560?k=6&m=470852560&s=612x612&w=0&h=FsJsHwZlvFqbYQm_ke8rWceWr8FQpbWSHfGaikIEgRk="
-
-export const HTL_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(HTL_API)}`
-
+const HTL_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(HTL_API)}`
 const MENU_API="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.406498&lng=78.47724389999999&restaurantId="
-
 export const MENU_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(MENU_API)}`
 
-const latandlang=[
+export const latandlang=[
   {
     Location:"Chennai",
     lat:"13.0826802",
@@ -39,14 +36,10 @@ const latandlang=[
     lat:"17.6868159",
     lng:"83.2184815"
    },
+   {
+      Location:"Hyderabad",
+      lat:"17.406498",
+      lng:"78.47724389999999"
+     },
 
 ]
-// console.log(latandlang)
-// const itp="Vizag"
-
-// let ap=latandlang.filter(i=>i.Location===itp)
-// const{lat,lng}=ap[0]
-// console.log(lng)
-
-
-

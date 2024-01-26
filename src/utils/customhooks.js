@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { HTL_API_CORS, MENU_API_CORS } from "./constants"
+import {  MENU_API_CORS } from "./constants"
 
 const useMenu=(resId)=>{
   const[resInfo,setResInfo]=useState([])
@@ -31,5 +31,3 @@ return(()=>{
 },[])
     return onlineStatus
 }
-
-

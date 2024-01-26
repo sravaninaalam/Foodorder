@@ -35,8 +35,8 @@ const Body = () => {
   //   setItems(json_data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
   
   // }
-  const isonline=useOnline()
-  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are offline 🔴</h1>}
+  // const isonline=useOnline()
+  // if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are offline 🔴</h1>}
 
   return !replica?<Shimmer/>:  (
    <>

@@ -156,4 +156,6 @@ uncontrolled component - is  something which has its own state. It states not de
 
 Redux store==>   const items=useSelector(store=>store.slice_name.state)
 We have to make sure that which portion of the store we are subscribing to . We always need to subscribe to part whichever we are required.
-  useSelector(store=>store) ===> Doing this is not a good practice because Whenever any slice updates unnecessarily m component is subscribing.Its not necessary so always subscribe to particular portion of store 
+  useSelector(store=>store) ===> Doing this is not a good practice because Whenever any slice updates unnecessarily m component is subscribing.Its not necessary so always subscribe to a particular portion of the store 
+
+Vanilla Redu(older redux)==>Don't mutate state..In new redux i.e RTK we can mutate the state but in bts redux uses immer to do all of this

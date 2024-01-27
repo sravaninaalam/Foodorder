@@ -35,23 +35,14 @@ export function getRestaurantsWith(item,data){
   )
 }
 
- function backToDefaultLocation(){
-    const dispatch=useDispatch()
-
-    return(dispatch(enterLocation('Hyderabad')))
-}
-
 export const locationData=()=>{
   
   const loc_data= useSelector(store=>store.location.loc)
   const[jsondata,setJsonData]=useState()
-  
+  const dispatch=useDispatch()
+
   let ap=latandlang.filter(i=>i.Location.toLowerCase()===loc_data.toLowerCase())
-  if(ap.length==0){ 
-    return (
-    backToDefaultLocation() 
-    )
-  }
+  if(ap.length==0) return(dispatch(enterLocation('Hyderabad')))
   const{lat,lng}=ap[0]
    useEffect(()=>{
        getLoc()

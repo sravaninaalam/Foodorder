@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { latandlang } from "./constants";
+import { enterLocation } from "../redux/locationSlice";
 
 export function searchedRestau(ip,data){
   // console.log(ip)
@@ -34,7 +35,11 @@ export function getRestaurantsWith(item,data){
   )
 }
 
+ function backToDefaultLocation(){
+    const dispatch=useDispatch()
 
+    return(dispatch(enterLocation('Hyderabad')))
+}
 
 export const locationData=()=>{
   
@@ -42,8 +47,11 @@ export const locationData=()=>{
   const[jsondata,setJsonData]=useState()
   
   let ap=latandlang.filter(i=>i.Location.toLowerCase()===loc_data.toLowerCase())
-  if(ap.length==0) return 
-
+  if(ap.length==0){ 
+    return (
+    backToDefaultLocation() 
+    )
+  }
   const{lat,lng}=ap[0]
    useEffect(()=>{
        getLoc()

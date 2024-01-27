@@ -13,33 +13,4 @@ const HTL_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(HTL_
 const MENU_API="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.406498&lng=78.47724389999999&restaurantId="
 export const MENU_API_CORS=`https://api.allorigins.win/raw?url=${encodeURIComponent(MENU_API)}`
 
-export const latandlang=[
-  {
-    Location:"Chennai",
-    lat:"13.0826802",
-    lng:"80.2707184"
- 
-   },
-   {
-   Location:"Banglore",
-    lat:"12.9715987",
-    lng:"77.5945627"
-   },
-   {
-      Location:"Vizianagaram",
-      lat:"18.1066576",
-      lng:"83.39555059999999"
-   
-   },
-   {
-    Location:"Vizag",
-    lat:"17.6868159",
-    lng:"83.2184815"
-   },
-   {
-      Location:"Hyderabad",
-      lat:"17.406498",
-      lng:"78.47724389999999"
-     },
 
-]

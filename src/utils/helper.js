@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { latandlang } from "./constants";
+import { latandlang } from "./locationdata";
 import { enterLocation } from "../redux/locationSlice";
 
 export function searchedRestau(ip,data){

@@ -55,9 +55,9 @@ PARCEL:
    11)Tree shaking algo --remove unused code
    
 JSX  - html like syntax but not HTML in javascript
-JSX (transpiled before it reaches js engine)
+JSX (transpiled before it reaches the js engine)
 
-JSX=>React.createElement=>React element(objct)=>Html ele(render)
+JSX=>React.createElement=>React element(object)=>Html ele(render)
 Babel uses an abstract syntax tree(AST) 
 
 Components
@@ -135,7 +135,7 @@ this.timer=setInterval(()=>{
                  componentWillUnmount(){
                             clearInterval(this.timer)                                                                                                                                                       }"""
 
-  ==>  Lazy loading, code chunking, code splitting, dynamic loading, and dynamic import all are the same. The main purpose of them is to make sure that to make code more scalable, readable, and maintainable by splitting it into chunks. Usually, it's moto like one file has to contain one feature.If we have more features in one file it decreases the scalability
+  ==>  Lazy loading, code chunking, code splitting, dynamic loading, and dynamic import all are the same. The main purpose of them is to make sure that to make code more scalable, readable, and maintainable by splitting it into chunks. Usually, it's moto like one file has to contain one feature. If we have more features in one file it decreases the scalability
   and it is very difficult to solve any errors
   const Somecomponent=Lazy(()=>import('component_path'))
   <Suspense fallback={<Shimmer/>}><Somecomponent/></Suspense>
@@ -143,8 +143,8 @@ this.timer=setInterval(()=>{
   WRITING CSS
       1.index.css   2)sass and scss  3)styled components 4)libraries and frameworks(material ui, chakra ui, and design, bootstrap)
       Tailwind CSS: we will install tailwind along with post-CSS. post-CSS is a tool for transforming CSS with JavaScript.
-      ".postcssrc" file is a configuration for post css helps the parcel to understand what is written in tailwind
-    cons-1) There were some cases where we needed to write more classes in our file. when we put so much CSS classes in our JSX or HTML  files then our js file is overloaded with CSS classes and the code feels a little less readable
+      ".postcssrc" file is a configuration for post css that helps the parcel to understand what is written in tailwind
+    cons-1) There were some cases where we needed to write more classes in our file. when we put so many CSS classes in our JSX or HTML  files then our js file is overloaded with CSS classes and the code feels a little less readable
      apart from this everything is good
  pros-1)tailwind is lightweight/tiny (when  parcel makes a bundle of CSS it will only include the CSS that is required on our web page . If we have the same classes multiple times it will load only one class) Tailwind has more than 1000+ classes but it is loaded on our page with the classes which we used in our app, Thats why tailwind is lightweight
 
@@ -155,7 +155,7 @@ Lifting the state up: If we want to control our child component at the parent le
 uncontrolled component - is  something which has its own state. It states not dependent on any other component
 
 Redux store==>   const items=useSelector(store=>store.slice_name.state)
-We have to make sure that which portion of the store we are subscribing to . We always need to subscribe to part whichever we are required.
-  useSelector(store=>store) ===> Doing this is not a good practice because Whenever any slice updates unnecessarily m component is subscribing.Its not necessary so always subscribe to a particular portion of the store 
+We have to make sure that which portion of the store we are subscribing to. We always need to subscribe to part whichever we are required.
+  useSelector(store=>store) ===> Doing this is not a good practice because Whenever any slice updates unnecessarily m component is subscribing. It's not necessary to always subscribe to a particular portion of the store 
 
-Vanilla Redu(older redux)==>Don't mutate state..In new redux i.e RTK we can mutate the state but in bts redux uses immer to do all of this
+Vanilla Redu(older redux)==>Don't mutate state...In new redux i.e RTK we can mutate the state but in bts redux uses immer to do all of this

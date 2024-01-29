@@ -1,0 +1,21 @@
+//debouncing
+
+useEffect(()=>{
+   setTimeout(()=>getResults(),2000)
+},[searchtext)
+  async function(){
+     api call to fetch data==>const data=fetch(''+searchtext)
+  }
+
+//caching
+
+    const cacheSlice=createSlice({
+
+name:'search',initialState:{},reducers:{
+
+cacheResults:(state,action)=>{state=Object.assign(state,action.payload)}
+}
+    })
+
+//Debouncing with caching
+

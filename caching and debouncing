@@ -1,0 +1,40 @@
+//debouncing
+
+useEffect(()=>{
+   const timer= setTimeout(()=>getResults(),2000)
+
+return()=>clearTimeout(timer)
+
+},[searchtext)
+  async function getResultsn(){
+     api call to fetch data==>const data=fetch(''+searchtext)
+  }
+
+//caching
+
+    const cacheSlice=createSlice({
+
+name:'search',initialState:{},reducers:{
+
+cacheResults:(state,action)=>{state=Object.assign(state,action.payload)}
+}
+    })
+
+//Debouncing with caching
+
+useEffect(()=>{
+ if(searchCache[searchedtext]){
+      setSuggestions(searchCache[searchedtext])
+}
+else{
+getResults()
+},[searchtext])
+
+ async function getResultsn(){
+   //  api call to fetch data==>const data=fetch(''+searchtext)
+const json=await data.json
+   dispatch(
+      cacheResults([searchtext]:json[1])
+   )
+  }
+

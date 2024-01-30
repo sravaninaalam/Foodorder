@@ -11,6 +11,7 @@ import Login from "./src/components/Login";
 import Hotelmenu from "./src/components/Hotelmenu";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import Signup from "./src/components/Signup";
 const App=()=>{
     return(
         <Provider store={store}>
@@ -45,6 +46,10 @@ const appRouter=createBrowserRouter([
             {
                 path:'/restaurants/:resId',
                 element:<Hotelmenu/>
+            },
+            {
+                path:'/signup',
+                element:<Signup/>
             }
         ],
         errorElement:<Error/>

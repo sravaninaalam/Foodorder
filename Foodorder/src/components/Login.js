@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, Formik,Form,ErrorMessage} from 'formik'
 import * as Yup from 'yup'
+import{Link} from 'react-router-dom'
 const Login = () => {
   return (
     <>
@@ -23,7 +24,9 @@ const Login = () => {
               <label>password:</label>
               <Field type='password' name='password' className='w-auto md:w-72 border border-black rounded-md p-1 m-2'/>
               <h2 className='text-red-500'><ErrorMessage name='password'/></h2>
+              <button type='submit' className=' m-2 p-1 w-48 md:w-72 bg-blue-400 rounded-md'>Login</button>
           </Form>
+          <p>Don't have an account ?<Link to='/signup'><span className='text-lg font-medium'>Signup</span></Link></p>
       </div>
   </Formik>
     </>

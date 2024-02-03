@@ -1,10 +1,14 @@
 import React from 'react'
 import{Formik,Form,Field, ErrorMessage} from'formik'
 import * as Yup from 'yup'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const Signup = () => {
+  const navigate=useNavigate()
   return (
     <>
+    <ToastContainer theme='colored'/>
         <Formik initialValues={{name:'',email:'',password:''}}
         validationSchema={Yup.object({
             name:Yup.string().required('Required'),
@@ -12,7 +16,21 @@ const Signup = () => {
             password:Yup.string().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$","Must contain at least one number and one uppercase and lowercase letter and one Special character, minimum 8 and maximum 16").
                     required("Required")
         })}
-        onSubmit={()=>{}}
+        onSubmit={async(values)=>{
+
+          fetch("https://foodapp-json.onrender.com/users",{           
+              method:"POST",
+              headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(values)
+           })
+           toast.success("Successfully registered")
+           const timer=setTimeout(()=>{
+             navigate('/login')
+           },0)
+            return ()=>clearTimeout(timer)
+        }}
         >
         <div className='bg-slate-200 w-60 md:w-96 mx-10 md:mx-auto my-5 p-5 shadow-md rounded-lg'>
             <h2 className='font-serif text-lg font-semibold text-center'>Signup Form</h2>

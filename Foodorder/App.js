@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM  from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Bodycomponents/Body";
@@ -12,12 +12,16 @@ import Hotelmenu from "./src/components/Hotelmenu";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
 import Signup from "./src/components/Signup";
+import userContext from './src/utils/userContext'
 const App=()=>{
+    const[name,setName]=useState('')
     return(
         <Provider store={store}>
+            <userContext.Provider  value={{loggedUser:name,setName}}>
               <Header/>
                     <Outlet/>
               <Footer/>
+              </userContext.Provider>
         </Provider>
     )
 }

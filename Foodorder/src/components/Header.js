@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { APPLOGO } from '../utils/constants'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 import { enterLocation } from '../redux/locationSlice'
 import { Home ,BadgeInfo,ShoppingCart} from 'lucide-react'
+import userContext from '../utils/userContext'
 const Header = () => {
     const[loc,setLoc]=useState('')
     const dispatch=useDispatch()
@@ -13,6 +14,8 @@ const Header = () => {
       setLoc('')
     }
     
+    const {loggedUser}=useContext(userContext)
+   
     const cartItems=useSelector(store=>store.cart.items)
    
   return (
@@ -29,7 +32,8 @@ const Header = () => {
                     <Link to='/'><li className='mx-3'><Home/></li></Link>
                    <Link to='/about'><li className='mx-3'><BadgeInfo/></li></Link>
                     <Link to='/cart'><li className='mx-3 flex'><ShoppingCart/> -{cartItems.length}</li></Link>
-                   <Link to='/login'><li className='mx-3'>Login</li></Link>
+                    {loggedUser ?<span className="font-bold mx-4 my-4 md:my-0">{loggedUser}</span>:
+                   <Link to='/login'><li className='mx-3'>Login</li></Link>}
                 </ul>
             </div>
         </div>

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Field, Formik,Form,ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 import{Link, useNavigate} from 'react-router-dom'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import userContext from '../utils/userContext'
 const Login = () => {
+  const {setName}=useContext(userContext)
   const navigate=useNavigate()
   return (
     <>
@@ -26,11 +28,11 @@ const Login = () => {
          {
          
               const timer= setTimeout(() => {
-                    // setName(values.name)
+                    setName(values.name)
                     toast.success("Login succesfull")
                     onSubmitProps.resetForm()
                     navigate("/")
-              },0);
+              },10);
 
               return ()=>clearTimeout(timer)
          }

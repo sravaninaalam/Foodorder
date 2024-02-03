@@ -8,15 +8,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Shimmer from '../Shimmer'
 import { Link } from 'react-router-dom'
 import {useOnline } from '../../utils/customhooks'
-import { useSelector } from 'react-redux'
-
 const Body = () => {
 
   const[hotelData,setHotelData]=useState([])
   const[replica,setReplica]=useState([])
   const[items,setItems]=useState([])
   const[searchip,setSearchIp]=useState('')
-  const loc_data= useSelector(store=>store.location.loc)
   const data=locationData()
   useEffect(()=>{
     setHotelData(data?.jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -24,6 +21,10 @@ const Body = () => {
     setItems(data?.jsondata?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info)
   })
   const title=data?.jsondata?.data?.cards[1]?.card?.card?.header?.title
+
+  const isonline=useOnline()
+  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
+
   return !replica?<Shimmer/>:  (
    <>
        <div>

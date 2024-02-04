@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { latandlang } from "./locationdata";
 import { enterLocation } from "../redux/locationSlice";
-
 export function searchedRestau(ip,data){
   // console.log(ip)
     return(data.filter(i=>i?.info?.name.toLowerCase().includes(ip.toLowerCase())))
@@ -42,10 +41,16 @@ export const locationData=()=>{
   const dispatch=useDispatch()
 
   let ap=latandlang.filter(i=>i.Location.toLowerCase()===loc_data.toLowerCase())
-  if(ap.length==0) return(dispatch(enterLocation('Hyderabad')))
+  if(ap.length==0) return(
+    <div>
+   <h1 className="italic">{alert("Sorry!!Location Not Available😔")}</h1>
+    {dispatch(enterLocation('Hyderabad'))}
+    </div>)
+  
   const{lat,lng}=ap[0]
    useEffect(()=>{
        getLoc()
+      
    },[loc_data])
    async function getLoc(){
     const HTL_API=`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true`
@@ -54,8 +59,7 @@ export const locationData=()=>{
     const json=await data.json()
      setJsonData(json)
    }
-   
-   return{jsondata}
+    return{jsondata}
 }
 
 

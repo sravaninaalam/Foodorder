@@ -22,9 +22,6 @@ const Body = () => {
   })
   const title=data?.jsondata?.data?.cards[1]?.card?.card?.header?.title
 
-  const isonline=useOnline()
-  if(!isonline){return<h1 className='m-5 font-bold text-center text-xl'>You are ofline 🔴</h1>}
-
   return !replica?<Shimmer/>:  (
    <>
        <div>

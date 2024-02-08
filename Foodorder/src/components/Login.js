@@ -3,14 +3,13 @@ import {Field, Formik,Form,ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 import{Link, useNavigate} from 'react-router-dom'
 import {ToastContainer, toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import userContext from '../utils/userContext'
 const Login = () => {
   const {setName}=useContext(userContext)
   const navigate=useNavigate()
   return (
     <>
-    <ToastContainer theme='colored'  position="top-right" limit={1}/>
+    <ToastContainer theme='colored'  position="top-right"/>
       <Formik initialValues={{name:'',password:''}}
       validationSchema={
         Yup.object({
@@ -26,10 +25,10 @@ const Login = () => {
               forEach(i=>{
          if(i.name.toLowerCase()===values.name.toLowerCase() && i.password===values.password)
          {
-         
+          toast.success("Login succesfull")
               const timer= setTimeout(() => {
                     setName(values.name)
-                    toast.success("Login succesfull")
+                
                     onSubmitProps.resetForm()
                     navigate("/")
               },10);

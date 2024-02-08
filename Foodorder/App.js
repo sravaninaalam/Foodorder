@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import store from "./src/redux/store";
 import Signup from "./src/components/Signup";
 import userContext from './src/utils/userContext'
+import 'react-toastify/dist/ReactToastify.css'
 const App=()=>{
     const[name,setName]=useState('')
     return(

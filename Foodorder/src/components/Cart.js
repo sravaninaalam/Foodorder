@@ -22,7 +22,7 @@ function Cartcard({data}){
            >Remove Item</button>
            <button className='p-2 m-2 rounded-md bg-green-300 outline  outline-green-400'
            onClick={()=>{toast.success("Order placed successfully!!")
-           toast("order item hasbeen removed from the cart")
+           toast.info("order item hasbeen removed from the cart")
            dispatch(removeItem(data.id))}}>Place Order</button>
         </div>
     </div>
@@ -43,7 +43,9 @@ const Cart = () => {
           {cart_data.length?
           <button className="rounded-lg font-medium outline outline-red-500 p-2 m-5 hover:bg-red-400"
           onClick={()=>{toast.error("Cart has been cleared")
-          dispatch(clearCart())}} >Clear cart</button>
+          const t=setTimeout(()=>{dispatch(clearCart())},0)
+          return ()=>clearTimeout(t)
+        }} >Clear cart</button>
         :
         <div className='m-3'>
            <img src={Cart_Empty_Img} className='w-56 h-60  mt-2 mx-5'/>

@@ -2,7 +2,7 @@
   "name": "projects",
   "version": "1.0.0",
   "description": "Food order web application",
-  "main": "App.js",
+
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",

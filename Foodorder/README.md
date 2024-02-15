@@ -122,10 +122,10 @@ useEffect(()=>{                                        =>                compone
 },[count,count2)                                                                     if(this.state.count!==revState.count|| this.state.count2!==revState.count2){}
 
 So useEffect has a dependency array as previously in class components we do use some conditional statements to check upon state variables. if this variable is updated do this
-so in useEffect we have a dependency array to solve the complexity of writing code
+so in useEffect, we have a dependency array to solve the complexity of writing code
 
 ===>Why do we need to unmount the things?
-    As React is a single-page application, whenever we have setTimeOut(), and setInterval() in our page every time it calls them unnecessarily even though we move out of the component. It is a huge performance loss. So componentWillUnmount comes into the picture.It will stop the setTimeout or setInterval once we move out of the component. It makes our application scalable 
+    As React is a single-page application, whenever we have setTimeOut(), and setInterval() in our page every time it calls them unnecessarily even though we move out of the component. It is a huge performance loss. So componentWillUnmount comes into the picture. It will stop the setTimeout or setInterval once we move out of the component. It makes our application scalable 
 """
     componentDidMount(){                               
 this.timer=setInterval(()=>{

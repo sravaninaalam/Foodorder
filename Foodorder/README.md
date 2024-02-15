@@ -55,6 +55,7 @@ PARCEL:
    11)Tree shaking algo --remove unused code
    
 JSX  - html like syntax but not HTML in javascript
+
 JSX (transpiled before it reaches the js engine)
 
 JSX=>React.createElement=>React element(object)=>Html ele(render)
@@ -87,7 +88,9 @@ ASSIGNMENT-2
    1) we should not touch/make any changes in package.lock.json. this file has locked versions of all the packages that we have installed and their dependency packages. If we change anything in  our package.lock  whole our app might break at different levels.
    2) As we keep locking all our packages and their dependencies in package-lock JSON  so there is no need to push our node modules in git.
    3) Browser list is most important to make run our app even in old browsers
+      
 Assignment-4
+
     1)Vdom is representaton of actual dom.
       Vdom is nothing but an object
       When we update anything then diff algo finds the difference between prev dom and the updated dom and then updates the actual dom
@@ -104,7 +107,9 @@ Q)Why do we need useEffect?
  Ans=>  Basically in React we make an API call after the initial render of our app. So useEffect hook was developed for the purpose of making an API call after the initial render
    .This useEffect has a call-back function where we make an API call
        So useEffect is needed to make an API call after the initial render
+       
 Q)If we console(useState) what will happen?
+
    It will return a function of useState which will be used behind the scenes
 q)How to make an API call in class components?
         async componentDidMount(){

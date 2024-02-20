@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { CDN_URL } from '../utils/constants'
 
 function Billingpage() {
-    const qnty=useSelector(state=>state.cart.items.quantity)
+  
     const cart_data=useSelector(store=>store.cart.items)
    
   return (
@@ -17,7 +17,7 @@ function Billingpage() {
                         <h1 className='font-bold'>{item.name}</h1>
                     </div>
                     <h4 className=' font-medium text-center mt-4 ml-5'>Price-₹{item.price/100 ||item.defaultPrice/100}</h4>
-                    <h4 className='text-center  mt-4 ml-5'>Quantity:<span className='font-medium'>{qnty}</span></h4>
+                    <h4 className='text-center  mt-4 ml-5'>Quantity:<span className='font-medium'>{item.quantity}</span></h4>
                </div>
               )}
         </div>  

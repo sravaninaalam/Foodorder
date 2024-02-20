@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector ,useDispatch} from 'react-redux'
 import { CDN_URL, Cart_Empty_Img } from '../utils/constants'
 import { Link } from 'react-router-dom' 
-import {clearCart,removeItem} from '../redux/cartSlice'
+import {clearCart,decreaseQuantity,increaseQuantity,removeItem} from '../redux/cartSlice'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Billingpage from './Billingpage'
 function Cartcard({data}){
   const dispatch=useDispatch()
   return(
@@ -24,16 +25,21 @@ function Cartcard({data}){
            onClick={()=>{toast.success("Order placed successfully!!")
            toast.info("order item hasbeen removed from the cart")
            dispatch(removeItem(data.id))}}>Place Order</button>
+           <div className='flex justify-center'>
+           {data.quantity >1 && <button className=' bg-gray-400 px-2 mt-1' onClick={()=>dispatch(decreaseQuantity(data.id))}>-</button>}
+            <span className='px-2 text-center font-bold'>{data.quantity}</span>
+            <button className=' bg-gray-400 px-2 mt-1' onClick={()=>dispatch(increaseQuantity(data.id))}>+</button>
+           </div>
         </div>
     </div>
   )
 }
 const Cart = () => {
   const cart_data=useSelector(store=>store.cart.items)
-
   const dispatch=useDispatch()
   return (
-   <>
+   <div className='grid grid-cols-12'>
+   <div className='col-span-7'>
    <ToastContainer theme='colored'/>
         <div className='w-9/12 mx-auto my-5 flex flex-wrap'>
             {cart_data.map((item,index)=><Cartcard data={item} key={index} />
@@ -54,7 +60,12 @@ const Cart = () => {
         </div>
         }
         </div>
-   </>
+      </div>
+      <div className='col-span-5'>
+          <Billingpage/>
+      </div>
+   </div>
+
   )
 }
 

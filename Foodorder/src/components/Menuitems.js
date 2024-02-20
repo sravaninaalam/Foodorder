@@ -6,7 +6,10 @@ import { addItem } from '../redux/cartSlice'
 const Menuitems = ({items}) => {
   const dispatch=useDispatch()
   const handleAddItem=(item)=>{
-    dispatch(addItem(item.card.info))
+    const{name,id,imageId,price,
+      description
+      }=item?.card?.info
+    dispatch(addItem({id:id,name:name,imageId:imageId,price:price,  description:description, quantity:1}))
   }
  
   return (

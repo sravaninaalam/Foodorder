@@ -20,7 +20,7 @@ const cartSlice=createSlice({
         },
         updateQuantity:(state,action)=>{
             const{id,qty}=action.payload
-            const tobeupdated = state.items.filter(item =>item.id === id ?item.quantity=qty:item.quantity);
+            state.items.filter(item =>item.id === id ?item.quantity=qty:item.quantity);
     
             
         },

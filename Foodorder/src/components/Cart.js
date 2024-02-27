@@ -6,7 +6,7 @@ import {clearCart,removeItem, updateQuantity} from '../redux/cartSlice'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Billingpage from './Billingpage'
-function Cartcard({data,key}){
+function Cartcard({data}){
   const dispatch=useDispatch()
   changeQuantity=(id,qty)=>{
       dispatch(updateQuantity({id,qty}))
@@ -43,7 +43,7 @@ const Cart = () => {
    <div >
    <ToastContainer theme='colored'/>
         <div className='w-9/12 mx-auto my-5'>
-            {cart_data.map((item,index)=><Cartcard data={item} key={index} />
+            {cart_data.map((item,index)=><Cartcard data={item} />
             )}
           </div>
       <div className='flex justify-center'>

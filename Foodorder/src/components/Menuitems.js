@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CDN_URL } from '../utils/constants'
 import {useDispatch} from 'react-redux'
 import { addItem } from '../redux/cartSlice'
-
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const Menuitems = ({items}) => {
+  const [ialreadyadded,setAlreadyadded]=useState(false)
+  const[added,setAdded]=useState([])
   const dispatch=useDispatch()
   const handleAddItem=(item)=>{
+  
     const{name,id,imageId,price,
       description
       }=item?.card?.info
+     setAdded(id)
+      if(added.includes(id)){
+        toast.info("already added to cart")
+        return
+      }
     dispatch(addItem({id:id,name:name,imageId:imageId,price:price,  description:description, quantity:1}))
   }
  
   return (
     <>
+  <ToastContainer theme='colored'/>
         <div>
             {items.map(item=>
            <div key={item?.card?.info?.id} className=" border-gray-200 border-b-2 m-2 p-2 flex justify-between">
@@ -34,5 +44,4 @@ const Menuitems = ({items}) => {
     </>
   )
 }
-
 export default Menuitems

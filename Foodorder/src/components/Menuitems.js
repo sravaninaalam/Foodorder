@@ -5,16 +5,15 @@ import { addItem } from '../redux/cartSlice'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 const Menuitems = ({items}) => {
-  const [ialreadyadded,setAlreadyadded]=useState(false)
-  const[added,setAdded]=useState([])
+  const[addedToCart,setAddedToCart]=useState([])
   const dispatch=useDispatch()
   const handleAddItem=(item)=>{
   
     const{name,id,imageId,price,
       description
       }=item?.card?.info
-     setAdded(id)
-      if(added.includes(id)){
+     setAddedToCart(id)
+      if(addedToCart.includes(id)){
         toast.info("already added to cart")
         return
       }

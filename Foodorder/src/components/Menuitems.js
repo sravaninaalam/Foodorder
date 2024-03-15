@@ -14,7 +14,7 @@ const Menuitems = ({items}) => {
       }=item?.card?.info
      setAddedToCart(id)
       if(addedToCart.includes(id)){
-        toast.info("already added to cart")
+        toast.info(name+" "+"already added to cart")
         return
       }
     dispatch(addItem({id:id,name:name,imageId:imageId,price:price,  description:description, quantity:1}))

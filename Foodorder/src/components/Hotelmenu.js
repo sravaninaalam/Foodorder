@@ -12,10 +12,9 @@ const Hotelmenu = () => {
     if(resInfo.length<1){
         return <Shimmer/>
     }
-
     const{name,cloudinaryImageId,costForTwoMessage,cuisines}=
-                  resInfo?.cards[0]?.card.card.info
-   const category=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+                  resInfo?.cards[2]?.card.card.info
+   const category=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
    .filter(c=>c.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 //    console.log(category)
   return (
